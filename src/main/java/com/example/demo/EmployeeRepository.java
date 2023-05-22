@@ -52,7 +52,7 @@ public final class EmployeeRepository {
         return status;
     }
 
-    public static int update(Employee employee) {
+    public static boolean update(Employee employee) {
 
         int status = 0;
 
@@ -70,7 +70,8 @@ public final class EmployeeRepository {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
-        return status;
+
+        return (status > 0);
     }
 
     public static int delete(int id) {
